@@ -1,6 +1,9 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     ball.setVelocity(-16, -60)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    ball.vy += -60
+})
 let ball: Sprite = null
 scene.setBackgroundColor(15)
 let mySprite = sprites.create(img`
